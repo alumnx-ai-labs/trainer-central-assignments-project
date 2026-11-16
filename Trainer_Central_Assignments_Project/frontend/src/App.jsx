@@ -28,7 +28,7 @@ export default function App() {
     setLoading(true);
 
     try {
-      const resp = await fetch("/api/chat", {
+      const resp = await fetch(`${import.meta.env.VITE_API_BASE ?? ""}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: nextMessages }),
